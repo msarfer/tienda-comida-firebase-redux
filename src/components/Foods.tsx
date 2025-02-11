@@ -17,7 +17,7 @@ function Foods() {
               <header>
                 <img
                   className="foodImg"
-                  src={`/tienda-comida-firebase/images/${item.image}`}
+                  src={`/tienda-comida-firebase-redux/images/${item.image}`}
                   alt={item.name}
                   style={{height: '100px'}}
                 />

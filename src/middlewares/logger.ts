@@ -1,12 +1,13 @@
 import { Middleware } from "@reduxjs/toolkit";
+import logger from '../services/logging.ts'
 
 const loggerMiddleware: Middleware = (storeAPI) => (next) => (action) => {
-  console.log("🚀 Enviando accción:", action)
-  console.log("📦 Estado anterior:", storeAPI.getState())
+  logger.info(`🚀 Enviando accción: ${JSON.stringify(action)}`)
+  logger.info(`📦 Estado anterior: ${JSON.stringify(storeAPI.getState())}`)
 
   const result = next(action)
   
-  console.log("✅ Nuevo estado:", storeAPI.getState())
+  logger.info(`✅ Nuevo estado: ${JSON.stringify(storeAPI.getState())}`)
 
   return result
 }

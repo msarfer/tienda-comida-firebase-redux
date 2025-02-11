@@ -1,10 +1,10 @@
 import { useMemo, useState } from "react";
 import { useDispatch } from "react-redux";
 import { MenuItem, Order } from "../entities/entitites";
+import { refreshMenu } from "../features/menu/menuSlice";
 import { togglePages } from "../features/pages/pagesSlice";
 import { addOrder, lessItems } from "../services/firebase";
 import { AppDispatch } from "../store/store";
-import { fetchItems, refreshMenu } from "../features/menu/menuSlice";
 
 interface FoodOrderProps {
   food: MenuItem;
